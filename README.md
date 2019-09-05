@@ -22,6 +22,14 @@ It is better for you to create a project based on this repo:
 
 File -&gt; New Project -&gt; Version Control -&gt; Repo URL: <https://github.com/chainsawriot/mannheim_network.git>
 
+Or use the [RStudio.cloud](https://rstudio.cloud/project/492518).
+
+Assessment
+==========
+
+-   40% presentation
+-   60% final project
+
 Organization
 ============
 

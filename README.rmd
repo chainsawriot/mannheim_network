@@ -27,6 +27,13 @@ It is better for you to create a project based on this repo:
 
 File -> New Project -> Version Control -> Repo URL: https://github.com/chainsawriot/mannheim_network.git
 
+Or use the [RStudio.cloud](https://rstudio.cloud/project/492518).
+
+# Assessment
+
+* 40% presentation
+* 60% final project
+
 # Organization
 
 ## Class 1: revision of MKW 724, overview, relational data
