@@ -28,7 +28,7 @@ Organization
 Class 1: revision of MKW 724, overview, relational data
 -------------------------------------------------------
 
-### reivision of MKW 724
+### revision of MKW 724
 
 -   [MKW724 Github repo](https://github.com/chainsawriot/mannheim_computational)
     -   tidyverse
@@ -53,7 +53,7 @@ Class 1: revision of MKW 724, overview, relational data
     -   Affiliation
 -   Assignment: group project (due next week)
     -   Collect relational data about the class.
-        -   Mit wem haben Sie letzte Woche zusammen zu Mittag gegessen?
+        -   Mit wem haben Sie im letzen Semester zu Mittag gegessen?
 -   Reading
     -   Marin, A., & Wellman, B. (2011). Social network analysis: An introduction. The SAGE handbook of social network analysis, 11. \[[link](https://mis.csit.sci.tsu.ac.th/siraya/wp-content/uploads/2015/09/1Social-Network-Analysis-An-Introduction-1.pdf)\]
 
@@ -129,6 +129,7 @@ Class 6: MKW724 ∩ MKW726 / project presentation
 
 -   Integration of network and text analysis
     -   Keyness of communities
+    -   Structural topic model using network structure
     -   semantic network analysis
 -   Reading
     -   Himelboim, I., McCreery, S., & Smith, M. (2013). Birds of a feather tweet together: Integrating network and content analyses to examine cross-ideology exposure on Twitter. Journal of computer-mediated communication, 18(2), 154-174. [link](https://onlinelibrary.wiley.com/doi/full/10.1111/jcc4.12001)
