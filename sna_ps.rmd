@@ -1,0 +1,37 @@
+---
+title: "Assignment"
+author: "Your name!"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Importanting the data
+
+```{r cars}
+require(rtweet)
+require(tidyverse)
+mdb <- readRDS('mdb.RDS') %>% select(user_id, name, screen_name, description, followers_count, friends_count)
+mdb_friends <- readRDS("mdb_friends.RDS")
+mdb_friends %>% filter(user_id %in% mdb$user_id) %>% rename(ego = 'user', friends = 'user_id') -> mdb_edges
+mdb_graph <- graph_from_data_frame(d = mdb_edges, vertices = mdb)
+```
+
+## Eigenvector centrality
+
+List out the MdB with the highest eigenvector centrality
+
+```{r}
+```
+
+## Community detection
+
+Please try to find out communities in the MdB network using the walktrap algorithm. Try to interpret what are those communities by looking at the MdBs with the highest eigenvector centrality in each community.
+
+```{r}
+set.seed(42)
+mdb_wc <- 
+```
+

@@ -30,3 +30,5 @@ mkw_graph_raw <- graph_from_data_frame(d = mkw_edges_clean, vertices = mkw_nodes
 
 mkw_graph <- delete.vertices(mkw_graph_raw, V(mkw_graph_raw)$name %in% c("14", "17", "18", "23")) %>% igraph::simplify(remove.multiple = FALSE, remove.loops = TRUE)
 V(mkw_graph)$name <- V(mkw_graph)$student_name
+
+constraint(mkw_graph)
