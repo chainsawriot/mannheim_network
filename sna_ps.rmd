@@ -35,3 +35,7 @@ set.seed(42)
 mdb_wc <- 
 ```
 
+## extra
+
+Using Gephi, Visualise the MdB network and color nodes by community membership.
+
