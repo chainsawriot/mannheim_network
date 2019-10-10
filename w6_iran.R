@@ -23,8 +23,9 @@ membership(en_bots_wc) %>% table
 
 wc_res %>% filter(gp %in% c(2, 4, 6, 7, 8, 9, 10, 13, 14)) -> wc_target
 
-en_bots %>% filter(userid %in% wc_target$userid) %>% select(userid, tweet_text) %>% 
-    group_by(userid) %>% summarise(alltext = paste0(tweet_text, collapse = " ")) %>% 
+en_bots %>% filter(userid %in% wc_target$userid) %>% 
+    select(userid, tweet_text) %>% group_by(userid) %>% 
+    summarise(alltext = paste(tweet_text, collapse = " ")) %>% 
     left_join(wc_target) -> user_prof
 
 ### What is a user profile?
@@ -37,7 +38,7 @@ require(stm)
 
 tweet_dfm <- dfm(user_prof$alltext, remove_numbers = TRUE, remove_punct = TRUE, 
                  remove_url = TRUE, tolower = TRUE, remove = stopwords("en"), 
-                 remove_twitter = FALSE)
+                 remove_twitter = TRUE)
 
 tweet_dfm %>% dfm_trim(min_docfreq = 3, docfreq_type = 'count') -> tweet_dfm
 
@@ -45,17 +46,17 @@ docvars(tweet_dfm, "gp") <- as.factor(user_prof$gp)
 
 dfm_stm <- quanteda::convert(tweet_dfm, to = "stm")
 
-install.packages(c('geometry', 'Rtsne', 'rsvd'))
+##install.packages(c('geometry', 'Rtsne', 'rsvd'))
 saveRDS(dfm_stm, "data/dfm_stm.RDS")
 
 ### reset.
 
 require(stm)
 dfm_stm <- readRDS('data/dfm_stm.RDS')
-stm_model <- stm(dfm_stm$documents, dfm_stm$vocab, K = 5, data = dfm_stm$meta, 
-                 init.type = "Spectral", seed = 46709394, prevalence =~ gp)
+stm_model <- stm(dfm_stm$documents, dfm_stm$vocab, K = 3, data = dfm_stm$meta, 
+                 init.type = "Random", seed = 123456789, prevalence =~ gp)
 
 labelTopics(stm_model)
 
-prep <- estimateEffect(1:5 ~ gp, stm_model, meta = dfm_stm$meta)
+prep <- estimateEffect(1:3 ~ gp, stm_model, meta = dfm_stm$meta)
 summary(prep, topic = 3)
